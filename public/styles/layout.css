@@ -29,10 +29,23 @@ body {
   font-family: 'Bungee', cursive;
  }
 
- main.container {
-   width: 90%
-   display: flex;
-   justify-content: center;
-   background-color: #f4f1ec;
-   
- }
+ /* main.container {
+  display: flex;
+  justify-content: center;
+  background-color: #f4f1ec;
+  width: 90%
+ } */
+ 
+ main {
+  display: flex;
+  width: 90%;
+ align-content: center;
+ background-color: #f4f1ec;
+ margin: 0 auto;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
