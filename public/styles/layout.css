@@ -28,3 +28,11 @@ body {
  nav {
   font-family: 'Bungee', cursive;
  }
+
+ main.container {
+   width: 90%
+   display: flex;
+   justify-content: center;
+   background-color: #f4f1ec;
+   
+ }

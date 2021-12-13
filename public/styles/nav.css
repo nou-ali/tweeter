@@ -7,6 +7,7 @@ display: flex;
 align-items: center;
 justify-content: space-between;
 padding: 1.5em;
+position: relative;
 }
 
 /* Bungee as its default font-family*/
@@ -19,7 +20,6 @@ span {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  text-transform: lowercase;
   padding: 1.5em;
 }
 
