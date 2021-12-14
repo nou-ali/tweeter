@@ -7,7 +7,15 @@ border-radius: 5px;
 margin-top: 3%;
 }
 
-.avatar,.icons {
+.tweetContainer:hover {
+box-shadow: 10px 10px #000000;
+}
+
+.icons i:hover {
+  color: #000000;
+} 
+
+.avatar,.bottomComponents {
   display:flex;
   justify-content: space-between;
 }
