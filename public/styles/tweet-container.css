@@ -1,0 +1,22 @@
+.tweetContainer {
+height: 400px;
+width: 100%;
+border: 3px solid #000000;
+padding: 2.5% 1%;
+border-radius: 5px;
+margin-top: 3%;
+}
+
+.avatar,.icons {
+  display:flex;
+  justify-content: space-between;
+}
+
+.lineForBox {
+  border-bottom: 3px solid #000000;
+  margin-bottom: 1em;
+}
+
+.textInContainer {
+  margin-bottom: 1em;
+}
