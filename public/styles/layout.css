@@ -28,20 +28,13 @@ body {
  nav {
   font-family: 'Bungee', cursive;
  }
-
- /* main.container {
-  display: flex;
-  justify-content: center;
-  background-color: #f4f1ec;
-  width: 90%
- } */
  
  main {
   display: flex;
   width: 90%;
- align-content: center;
- background-color: #f4f1ec;
- margin: 0 auto;
+  align-content: center;
+  background-color: #f4f1ec;
+  margin: 0 auto;
 }
 
 .container {

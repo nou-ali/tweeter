@@ -18,10 +18,10 @@ span {
 .dropdown {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
   padding: 1.5em;
 }
+
 
 .fas {
   color: #FF6347;

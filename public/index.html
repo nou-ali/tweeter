@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
 
     <!-- External JS -->
@@ -33,9 +34,8 @@
     <nav class="nav">
       <span>tweeter</span>
       <div class="dropdown">
-      <p class><strong></strong>Write</strong> a new tweet</p>
-      <i class="fas fa-angle-double-down"></i>
-      
+        <span><strong>Write</strong> a new tweet</span>
+        <span><i class="fas fa-angle-double-down"></i></span>
     </div>
     </nav>
     <header class="site-header">
@@ -51,11 +51,18 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-    <h1>Main content</h1>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-    </p>
+    <section class="new-tweet">
+      <form id="tweeter-form" action= "/tweets" method="POST">
+        <div class="input">
+        <label for="tweet-text">What are you humming about?</label>
+        <textarea name="text" id="tweet-text"></textarea>
+        </div>
+        <div class="button-container">
+          <button type="submit">Tweet</button>
+          <output name="counter" class="counter" for="tweet-text">140</output>
+        </div>
+      </form>
+    </section>
   </main>
   </body>
 </html>
