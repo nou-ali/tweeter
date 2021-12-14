@@ -11,8 +11,12 @@ position: relative;
 }
 
 /* Bungee as its default font-family*/
-span {
+.tweeter-logo {
   font-family: 'Bungee', cursive;
+}
+
+nav, span {
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 .dropdown {
