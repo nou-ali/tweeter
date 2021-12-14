@@ -31,3 +31,10 @@ nav, span {
   color: #FF6347;
 }
 
+/* Sticky navbar */
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
