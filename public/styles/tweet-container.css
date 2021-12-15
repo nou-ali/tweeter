@@ -20,7 +20,27 @@ box-shadow: 10px 10px #000000;
   justify-content: space-between;
   color:#000000;
   font-weight: 600;
+  
 }
+
+.avatarProfile {
+  vertical-align: middle;
+}
+
+.avatarName {
+  line-height: 50px;
+  vertical-align: top;
+}
+
+.tweetContainer .avatarImage {
+  height: auto;
+  width: 50px;
+}
+
+.tweetContainer .avatar span {
+  line-height: 50px;
+}
+
 
 .bottomComponents {
   display:flex;
@@ -42,3 +62,4 @@ box-shadow: 10px 10px #000000;
   color:#000000;
   font-weight: 600;
 }
+
