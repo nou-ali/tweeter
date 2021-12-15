@@ -69,6 +69,23 @@ const createTweetElement = function(tweet) {
 
 renderTweets(tweetData);
 
+const $form = $('#tweeter-form');
+$form.on('submit', function(event){
+  event.preventDefault();
+  const serializedData = $(this).serialize();
+  console.log(serializedData)
+
+  $.ajax({
+    url: 'http://localhost:8080/tweets',
+    method: 'POST',
+    data: serializedData,
+    success: (data) => {
+      console.log("success");
+  }  
+  })
 });
 
+  
+  });
 
+ 
