@@ -13,9 +13,16 @@ box-shadow: 10px 10px #000000;
 
 .icons i:hover {
   color: #000000;
-} 
+}  
 
-.avatar,.bottomComponents {
+.avatar {
+  display:flex;
+  justify-content: space-between;
+  color:#000000;
+  font-weight: 600;
+}
+
+.bottomComponents {
   display:flex;
   justify-content: space-between;
 }
@@ -27,4 +34,11 @@ box-shadow: 10px 10px #000000;
 
 .textInContainer {
   margin-bottom: 1em;
+  color:#000000;
+  font-weight: 600;
+}
+
+.daysCounter {
+  color:#000000;
+  font-weight: 600;
 }
