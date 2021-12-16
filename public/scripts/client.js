@@ -1,9 +1,9 @@
 // Test / driver code (temporary). Eventually will get this from the server.
 $(document).ready(function () {
 
-//hide error messages until the errors are committed
-    $('.error1').hide();
-    $('.error2').hide();
+  //hide error messages until the errors are committed
+  $('.error1').hide();
+  $('.error2').hide();
 
   const loadTweets = function () {
     $.ajax({
@@ -76,14 +76,15 @@ $(document).ready(function () {
     if (tweetValidation > 140) {
       $('.error1').text("Hey there! We know you have a lot to say but please keep to 140 characters.");
       $('.error1').slideDown('slow');
-      return;
     }
     if (tweetValidation === 0) {
       $('.error2').text("Hmmm... you didn't write anything. Don't be shy, try again.");
       $('.error2').slideDown('slow');
-      return;
     }
-
+     //If it does work use slide up method
+     $('.error1').slideUp();
+     $('.error2').slideUp();
+ 
     $.ajax({
       url: 'http://localhost:8080/tweets',
       method: 'POST',
