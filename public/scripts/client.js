@@ -1,34 +1,34 @@
 // Test / driver code (temporary). Eventually will get this from the server.
 $(document).ready(function () {
 
-  const loadTweets = function ()  {
+  const loadTweets = function () {
     $.ajax({
       url: 'http://localhost:8080/tweets',
       method: 'GET',
       data: 'json',
       success: (data) => {
-        console.log(data);
+        // console.log(data);
         renderTweets(data);
       },
       error: (err) => {
         console.log(`error: ${err}`)
-      } 
+      }
     });
   };
 
   loadTweets();
 
-const renderTweets = function(tweets) {
-  // $('#tweetContainer').empty();
+  const renderTweets = function (tweets) {
+    // $('#tweetContainer').empty();
 
-  for (const tweet of tweets) {
-    const $htmlTweetsContainer = createTweetElement(tweet);
-    $('#tweetContainer').prepend($htmlTweetsContainer);
-  }
-};
+    for (const tweet of tweets) {
+      const $htmlTweetsContainer = createTweetElement(tweet);
+      $('#tweetContainer').prepend($htmlTweetsContainer);
+    }
+  };
 
-const createTweetElement = function(tweet) {
- const $htmlTweetsContainer = $(`
+  const createTweetElement = function (tweet) {
+    const $htmlTweetsContainer = $(`
  <section class="tweetContainer">
  <article>
      <header class="avatar">
@@ -52,28 +52,29 @@ const createTweetElement = function(tweet) {
      </footer>
  </article> 
  </section> `)
-  return $htmlTweetsContainer;
-};
+    return $htmlTweetsContainer;
+  };
 
-const $form = $('#tweeter-form');
-$form.on('submit', function(event){
-  event.preventDefault();
-  const serializedData = $(this).serialize();
-  console.log(serializedData)
+  const $form = $('#tweeter-form');
+  $form.on('submit', function (event) {
+    event.preventDefault();
+    const serializedData = $(this).serialize();
+    console.log(serializedData)
 
-  $.ajax({
-    url: 'http://localhost:8080/tweets',
-    method: 'POST',
-    data: serializedData,
-    success: (data) => {
-      console.log("success");
-  }  
-  })
-});
-
-  
+    $.ajax({
+      url: 'http://localhost:8080/tweets',
+      method: 'POST',
+      data: serializedData,
+      success: (data) => {
+        console.log("success");
+        loadTweets();
+      }
+    })
   });
 
- 
-  
+
+});
+
+
+
 
