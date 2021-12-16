@@ -18,6 +18,11 @@ $(document).ready(function () {
   loadTweets();
 
   const createTweetElement = function (tweet) {
+    const escape = function (str) {
+      let div = document.createElement("div");
+      div.appendChild(document.createTextNode(str));
+      return div.innerHTML;
+    };
     const $htmlTweetsContainer = $(`
  <section class="tweetContainer">
  <article>
@@ -30,7 +35,7 @@ $(document).ready(function () {
        <span>${tweet.user.handle}</span>
      </header>
      <div class= "lineForBox">
-       <p class="textInContainer">${(tweet.content.text)}</p>
+       <p class="textInContainer">${escape(tweet.content.text)}</p>
      </div>
      <footer class="bottomComponents">
        <span class= "daysCounter">${timeago.format(tweet.created_at)}</span>
