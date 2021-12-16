@@ -1,6 +1,10 @@
 // Test / driver code (temporary). Eventually will get this from the server.
 $(document).ready(function () {
 
+//hide error messages until the errors are committed
+    $('.error1').hide();
+    $('.error2').hide();
+
   const loadTweets = function () {
     $.ajax({
       url: 'http://localhost:8080/tweets',
@@ -61,7 +65,7 @@ $(document).ready(function () {
   const $form = $('#tweeter-form');
   $form.on('submit', function (event) {
     event.preventDefault();
-   
+
     // console.log(serializedData)
 
     //error handling
@@ -70,12 +74,16 @@ $(document).ready(function () {
     const tweetValidation = $('#tweet-text').val().length;
 
     if (tweetValidation > 140) {
-      return alert("Hey there! We know you have a lot to say but please keep to 140 characters");
+      $('.error1').text("Hey there! We know you have a lot to say but please keep to 140 characters.");
+      $('.error1').slideDown('slow');
+      return;
     }
     if (tweetValidation === 0) {
-      return alert("Hmmm... you didn't write anything. Don't be shy, try again"); 
+      $('.error2').text("Hmmm... you didn't write anything. Don't be shy, try again.");
+      $('.error2').slideDown('slow');
+      return;
     }
-  
+
     $.ajax({
       url: 'http://localhost:8080/tweets',
       method: 'POST',
@@ -87,10 +95,10 @@ $(document).ready(function () {
           const newTweet = [serverResponse.slice(-1).pop()]
           renderTweets(newTweet);
         })
-        
+
       }
     })
-    
+
   });
 
 

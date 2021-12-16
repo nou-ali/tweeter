@@ -43,3 +43,27 @@ body {
   align-items: center;
   flex-direction: column;
 }
+
+.error1 {
+  padding: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: #a1adda;
+  border-color: #a1adda;
+  color: #a94442;
+  font-weight: 600;
+}
+
+.error2 {
+  padding: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: #a1adda;
+  border-color: #a1adda;
+  color: #a94442;
+  font-weight: 600;
+}
