@@ -7,7 +7,6 @@ $(document).ready(function () {
       method: 'GET',
       data: 'json',
       success: (data) => {
-        // console.log(data);
         renderTweets(data);
       },
       error: (err) => {
@@ -17,15 +16,6 @@ $(document).ready(function () {
   };
 
   loadTweets();
-
-  const renderTweets = function (tweets) {
-    // $('#tweetContainer').empty();
-
-    for (const tweet of tweets) {
-      const $htmlTweetsContainer = createTweetElement(tweet);
-      $('#tweetContainer').prepend($htmlTweetsContainer);
-    }
-  };
 
   const createTweetElement = function (tweet) {
     const $htmlTweetsContainer = $(`
@@ -40,7 +30,7 @@ $(document).ready(function () {
        <span>${tweet.user.handle}</span>
      </header>
      <div class= "lineForBox">
-       <p class="textInContainer">${tweet.content.text}</p>
+       <p class="textInContainer">${(tweet.content.text)}</p>
      </div>
      <footer class="bottomComponents">
        <span class= "daysCounter">${timeago.format(tweet.created_at)}</span>
@@ -53,6 +43,14 @@ $(document).ready(function () {
  </article> 
  </section> `)
     return $htmlTweetsContainer;
+  };
+
+  const renderTweets = function (tweets) {
+    // $('#tweetContainer').empty();
+    for (const tweet of tweets) {
+      const $htmlTweetsContainer = createTweetElement(tweet);
+      $('#tweetContainer').prepend($htmlTweetsContainer);
+    }
   };
 
   const $form = $('#tweeter-form');
@@ -68,20 +66,26 @@ $(document).ready(function () {
 
     if (tweetValidation > 140) {
       return alert("Hey there! We know you have a lot to say but please keep to 140 characters");
-     
     }
     if (tweetValidation === 0) {
       return alert("Hmmm... you didn't write anything. Don't be shy, try again"); 
     }
+  
     $.ajax({
       url: 'http://localhost:8080/tweets',
       method: 'POST',
       data: serializedData,
       success: (data) => {
+        $("#tweet-text").val("");
         console.log("success");
-        loadTweets();
+        $.get("http://localhost:8080/tweets", (serverResponse) => {
+          const newTweet = [serverResponse.slice(-1).pop()]
+          renderTweets(newTweet);
+        })
+        
       }
     })
+    
   });
 
 
