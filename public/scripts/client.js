@@ -73,17 +73,20 @@ $(document).ready(function () {
     console.log(serializedData);
     const tweetValidation = $('#tweet-text').val().length;
 
+  //If it does work use slide up method
+  //  $('.error1').slideUp();
+  //  $('.error2').slideUp();
     if (tweetValidation > 140) {
       $('.error1').text("Hey there! We know you have a lot to say but please keep to 140 characters.");
-      $('.error1').slideDown('slow');
+      $('.error1').slideDown("slow").slideUp(3000);
+      return;
     }
     if (tweetValidation === 0) {
       $('.error2').text("Hmmm... you didn't write anything. Don't be shy, try again.");
-      $('.error2').slideDown('slow');
+      $('.error2').slideDown("slow").slideUp(3000);
+      return;
     }
-     //If it does work use slide up method
-     $('.error1').slideUp();
-     $('.error2').slideUp();
+
  
     $.ajax({
       url: 'http://localhost:8080/tweets',
