@@ -58,9 +58,21 @@ $(document).ready(function () {
   const $form = $('#tweeter-form');
   $form.on('submit', function (event) {
     event.preventDefault();
-    const serializedData = $(this).serialize();
-    console.log(serializedData)
+   
+    // console.log(serializedData)
 
+    //error handling
+    const serializedData = $(this).serialize();
+    console.log(serializedData);
+    const tweetValidation = $('#tweet-text').val().length;
+
+    if (tweetValidation > 140) {
+      return alert("Hey there! We know you have a lot to say but please keep to 140 characters");
+     
+    }
+    if (tweetValidation === 0) {
+      return alert("Hmmm... you didn't write anything. Don't be shy, try again"); 
+    }
     $.ajax({
       url: 'http://localhost:8080/tweets',
       method: 'POST',
