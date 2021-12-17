@@ -6,7 +6,7 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Screenshots
 
-!["Desktop version"](https://github.com/nou-ali/tweeter/blob/master/docs/Tablet-tweeter.png)
+!["Desktop version"](https://github.com/nou-ali/tweeter/blob/master/docs/Desktop-tweeter.png)
 !["Tablet version"](https://github.com/nou-ali/tweeter/blob/master/docs/Tablet-tweeter.png)
 ## Getting Started
 
