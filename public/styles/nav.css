@@ -13,6 +13,7 @@ position: relative;
 /* Bungee as its default font-family*/
 .tweeter-logo {
   font-family: 'Bungee', cursive;
+  margin-top: -2.5%;
 }
 
 nav, span {
@@ -38,4 +39,19 @@ nav {
   top: 0;
   width: 100%;
   z-index: 3;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  nav { 
+    background-color: #6a7ec4;
+    background-image: url("https://www.transparenttextures.com/patterns/arabesque.png");
+  }
+}
+
+
+@media only screen and (min-width: 500px) and (max-width: 768px) {
+  nav { 
+    background-color: #6a7ec4;
+    background-image: url("https://www.transparenttextures.com/patterns/arabesque.png");
+  }
 }

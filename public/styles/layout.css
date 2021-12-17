@@ -78,7 +78,7 @@ body {
    justify-content: space-between;
    margin-top: 40px;
    }
-
+   
  .site-header {
   margin:100px;
   width:80%;
@@ -90,3 +90,5 @@ body {
   padding-right: 20px;
   width: 900px;
  }
+
+}
