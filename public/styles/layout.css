@@ -76,19 +76,17 @@ body {
    flex-direction: row;
    align-items: flex-start;
    justify-content: space-between;
-   margin-top: 50px;
+   margin-top: 40px;
    }
 
  .site-header {
-  margin:50px;
+  margin:100px;
   width:80%;
-  max-width:450px;
-  padding:15px 15px;
-  
+  max-width:400px;
  }
 
  main {
-  margin-top:10%;
+  margin-top: 9%;
   padding-right: 20px;
   width: 900px;
  }
