@@ -1,11 +1,10 @@
-// Test / driver code (temporary). Eventually will get this from the server.
-$(document).ready(function () {
+$(document).ready(function() {
 
   //hide error messages until the errors are committed
   $('.error1').hide();
   $('.error2').hide();
 
-  const loadTweets = function () {
+  const loadTweets = function() {
     $.ajax({
       url: 'http://localhost:8080/tweets',
       method: 'GET',
@@ -14,15 +13,15 @@ $(document).ready(function () {
         renderTweets(data);
       },
       error: (err) => {
-        console.log(`error: ${err}`)
+        console.log(`error: ${err}`);
       }
     });
   };
 
   loadTweets();
 
-  const createTweetElement = function (tweet) {
-    const escape = function (str) {
+  const createTweetElement = function(tweet) {
+    const escape = function(str) {
       let div = document.createElement("div");
       div.appendChild(document.createTextNode(str));
       return div.innerHTML;
@@ -50,12 +49,11 @@ $(document).ready(function () {
        </div>
      </footer>
  </article> 
- </section> `)
+ </section> `);
     return $htmlTweetsContainer;
   };
 
-  const renderTweets = function (tweets) {
-    // $('#tweetContainer').empty();
+  const renderTweets = function(tweets) {
     for (const tweet of tweets) {
       const $htmlTweetsContainer = createTweetElement(tweet);
       $('#tweetContainer').prepend($htmlTweetsContainer);
@@ -63,19 +61,15 @@ $(document).ready(function () {
   };
 
   const $form = $('#tweeter-form');
-  $form.on('submit', function (event) {
+  $form.on('submit', function(event) {
     event.preventDefault();
-
-    // console.log(serializedData)
 
     //error handling
     const serializedData = $(this).serialize();
     console.log(serializedData);
     const tweetValidation = $('#tweet-text').val().length;
 
-  //If it does work use slide up method
-  //  $('.error1').slideUp();
-  //  $('.error2').slideUp();
+    //If it does work use slide up method
     if (tweetValidation > 140) {
       $('.error1').text("Hey there! We know you have a lot to say but please keep to 140 characters.");
       $('.error1').slideDown("slow").slideUp(3000);
@@ -96,12 +90,12 @@ $(document).ready(function () {
         $("#tweet-text").val("");
         console.log("success");
         $.get("http://localhost:8080/tweets", (serverResponse) => {
-          const newTweet = [serverResponse.slice(-1).pop()]
+          const newTweet = [serverResponse.slice(-1).pop()];
           renderTweets(newTweet);
-        })
+        });
 
       }
-    })
+    });
 
   });
 
