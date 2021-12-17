@@ -7,7 +7,7 @@ This repository is the starter code for the project: Students will fork and clon
 ## Screenshots
 
 !["Desktop version"](https://github.com/nou-ali/TinyApp/blob/master/docs/logged-in.png)
-!["Tablet version"](https://github.com/nou-ali/TinyApp/blob/master/docs/logged-in.png)
+!["Tablet version"](https://github.com/nou-ali/tweeter/blob/master/public/images/TabletSize-tweeter.png)
 ## Getting Started
 
 1. Fork this repository, then clone your fork of this repository.
