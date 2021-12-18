@@ -1,3 +1,5 @@
+/* eslint-env jquery */
+/* eslint-env browser */
 $(document).ready(function() {
   
   $('#tweet-text').on('keyup', () => {
@@ -14,7 +16,7 @@ $(document).ready(function() {
     }
 
   });
-  
+
 });
 
 

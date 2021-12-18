@@ -1,3 +1,7 @@
+/* eslint-env jquery */
+/* eslint-env browser */
+/* global timeago */
+
 $(document).ready(function() {
 
   //hide error messages until the errors are committed
